@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <SignAssembly>False</SignAssembly>
@@ -16,6 +16,7 @@
     <Product>Anti Idol</Product>
     <PackageProjectUrl>https://github.com/ClearAll2/AntiIdol</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ClearAll2/AntiIdol</RepositoryUrl>
+    <Version>1.0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

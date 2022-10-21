@@ -5,7 +5,7 @@ namespace AntiIdol
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
-        private static Mutex? m_Mutex;
+        private static Mutex m_Mutex;
         [STAThread]
         static void Main()
         {

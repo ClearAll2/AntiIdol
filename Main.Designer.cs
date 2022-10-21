@@ -59,14 +59,14 @@
             this.labelLeftClickTray = new System.Windows.Forms.Label();
             this.checkBoxTrayIcon = new System.Windows.Forms.CheckBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
-            this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
-            this.timerAutoKey = new System.Windows.Forms.Timer(this.components);
-            this.timerAutoMouse = new System.Windows.Forms.Timer(this.components);
             this.labelCredit = new System.Windows.Forms.Label();
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.labelCopyright = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelProductName = new System.Windows.Forms.Label();
+            this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.timerAutoKey = new System.Windows.Forms.Timer(this.components);
+            this.timerAutoMouse = new System.Windows.Forms.Timer(this.components);
             this.tabControlMain.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.groupBoxAutoKey.SuspendLayout();
@@ -124,14 +124,14 @@
             // 
             this.comboBoxKey2Press.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKey2Press.FormattingEnabled = true;
-            this.comboBoxKey2Press.Location = new System.Drawing.Point(181, 231);
+            this.comboBoxKey2Press.Location = new System.Drawing.Point(172, 231);
             this.comboBoxKey2Press.Name = "comboBoxKey2Press";
-            this.comboBoxKey2Press.Size = new System.Drawing.Size(149, 25);
+            this.comboBoxKey2Press.Size = new System.Drawing.Size(151, 25);
             this.comboBoxKey2Press.TabIndex = 8;
             // 
             // numericUpDownIntervalAK
             // 
-            this.numericUpDownIntervalAK.Location = new System.Drawing.Point(241, 270);
+            this.numericUpDownIntervalAK.Location = new System.Drawing.Point(234, 270);
             this.numericUpDownIntervalAK.Maximum = new decimal(new int[] {
             300,
             0,
@@ -155,16 +155,16 @@
             // labelIntervalAK
             // 
             this.labelIntervalAK.AutoSize = true;
-            this.labelIntervalAK.Location = new System.Drawing.Point(34, 272);
+            this.labelIntervalAK.Location = new System.Drawing.Point(27, 272);
             this.labelIntervalAK.Name = "labelIntervalAK";
-            this.labelIntervalAK.Size = new System.Drawing.Size(182, 17);
+            this.labelIntervalAK.Size = new System.Drawing.Size(160, 17);
             this.labelIntervalAK.TabIndex = 7;
-            this.labelIntervalAK.Text = "Move mouse every (seconds):";
+            this.labelIntervalAK.Text = "Press key every (seconds):";
             // 
             // labelKey2Press
             // 
             this.labelKey2Press.AutoSize = true;
-            this.labelKey2Press.Location = new System.Drawing.Point(34, 234);
+            this.labelKey2Press.Location = new System.Drawing.Point(27, 234);
             this.labelKey2Press.Name = "labelKey2Press";
             this.labelKey2Press.Size = new System.Drawing.Size(84, 17);
             this.labelKey2Press.TabIndex = 6;
@@ -173,18 +173,17 @@
             // labelIntructAK
             // 
             this.labelIntructAK.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelIntructAK.Location = new System.Drawing.Point(34, 60);
+            this.labelIntructAK.Location = new System.Drawing.Point(27, 60);
             this.labelIntructAK.Name = "labelIntructAK";
             this.labelIntructAK.Size = new System.Drawing.Size(296, 159);
             this.labelIntructAK.TabIndex = 6;
             this.labelIntructAK.Text = "When enabled, this service will simulate a periodical user input by automatically" +
     " pressing a key.";
-            this.labelIntructAK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // checkBoxAutoKey
             // 
             this.checkBoxAutoKey.AutoSize = true;
-            this.checkBoxAutoKey.Location = new System.Drawing.Point(34, 36);
+            this.checkBoxAutoKey.Location = new System.Drawing.Point(27, 36);
             this.checkBoxAutoKey.Name = "checkBoxAutoKey";
             this.checkBoxAutoKey.Size = new System.Drawing.Size(110, 21);
             this.checkBoxAutoKey.TabIndex = 6;
@@ -297,10 +296,10 @@
             // 
             this.tabPageSetting.Controls.Add(this.groupBoxSettings);
             this.tabPageSetting.Controls.Add(this.groupBoxTrayOption);
-            this.tabPageSetting.Location = new System.Drawing.Point(4, 24);
+            this.tabPageSetting.Location = new System.Drawing.Point(4, 26);
             this.tabPageSetting.Name = "tabPageSetting";
             this.tabPageSetting.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSetting.Size = new System.Drawing.Size(729, 330);
+            this.tabPageSetting.Size = new System.Drawing.Size(729, 328);
             this.tabPageSetting.TabIndex = 1;
             this.tabPageSetting.Text = "Settings";
             this.tabPageSetting.UseVisualStyleBackColor = true;
@@ -433,21 +432,6 @@
             this.tabPageAbout.Text = "About";
             this.tabPageAbout.UseVisualStyleBackColor = true;
             // 
-            // notifyIconTray
-            // 
-            this.notifyIconTray.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconTray.Icon")));
-            this.notifyIconTray.Text = "Idol/Idle";
-            this.notifyIconTray.Visible = true;
-            this.notifyIconTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconTray_MouseClick);
-            // 
-            // timerAutoKey
-            // 
-            this.timerAutoKey.Tick += new System.EventHandler(this.timerAutoKey_Tick);
-            // 
-            // timerAutoMouse
-            // 
-            this.timerAutoMouse.Tick += new System.EventHandler(this.timerAutoMouse_Tick);
-            // 
             // labelCredit
             // 
             this.labelCredit.Location = new System.Drawing.Point(208, 159);
@@ -493,6 +477,21 @@
             this.labelProductName.Size = new System.Drawing.Size(92, 17);
             this.labelProductName.TabIndex = 28;
             this.labelProductName.Text = "Product Name";
+            // 
+            // notifyIconTray
+            // 
+            this.notifyIconTray.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconTray.Icon")));
+            this.notifyIconTray.Text = "Idol/Idle";
+            this.notifyIconTray.Visible = true;
+            this.notifyIconTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconTray_MouseClick);
+            // 
+            // timerAutoKey
+            // 
+            this.timerAutoKey.Tick += new System.EventHandler(this.timerAutoKey_Tick);
+            // 
+            // timerAutoMouse
+            // 
+            this.timerAutoMouse.Tick += new System.EventHandler(this.timerAutoMouse_Tick);
             // 
             // Main
             // 
