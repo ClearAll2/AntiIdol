@@ -59,13 +59,14 @@
             this.labelLeftClickTray = new System.Windows.Forms.Label();
             this.checkBoxTrayIcon = new System.Windows.Forms.CheckBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.timerAutoKey = new System.Windows.Forms.Timer(this.components);
+            this.timerAutoMouse = new System.Windows.Forms.Timer(this.components);
+            this.labelCredit = new System.Windows.Forms.Label();
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.labelCopyright = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelProductName = new System.Windows.Forms.Label();
-            this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
-            this.timerAutoKey = new System.Windows.Forms.Timer(this.components);
-            this.timerAutoMouse = new System.Windows.Forms.Timer(this.components);
             this.tabControlMain.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.groupBoxAutoKey.SuspendLayout();
@@ -419,53 +420,18 @@
             // 
             // tabPageAbout
             // 
+            this.tabPageAbout.Controls.Add(this.labelCredit);
             this.tabPageAbout.Controls.Add(this.labelCompanyName);
             this.tabPageAbout.Controls.Add(this.labelCopyright);
             this.tabPageAbout.Controls.Add(this.labelVersion);
             this.tabPageAbout.Controls.Add(this.labelProductName);
-            this.tabPageAbout.Location = new System.Drawing.Point(4, 24);
+            this.tabPageAbout.Location = new System.Drawing.Point(4, 26);
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAbout.Size = new System.Drawing.Size(729, 330);
+            this.tabPageAbout.Size = new System.Drawing.Size(729, 328);
             this.tabPageAbout.TabIndex = 2;
             this.tabPageAbout.Text = "About";
             this.tabPageAbout.UseVisualStyleBackColor = true;
-            // 
-            // labelCompanyName
-            // 
-            this.labelCompanyName.AutoSize = true;
-            this.labelCompanyName.Location = new System.Drawing.Point(287, 138);
-            this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(63, 17);
-            this.labelCompanyName.TabIndex = 3;
-            this.labelCompanyName.Text = "Company";
-            // 
-            // labelCopyright
-            // 
-            this.labelCopyright.AutoSize = true;
-            this.labelCopyright.Location = new System.Drawing.Point(287, 109);
-            this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(65, 17);
-            this.labelCopyright.TabIndex = 2;
-            this.labelCopyright.Text = "Copyright";
-            // 
-            // labelVersion
-            // 
-            this.labelVersion.AutoSize = true;
-            this.labelVersion.Location = new System.Drawing.Point(287, 82);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(51, 17);
-            this.labelVersion.TabIndex = 1;
-            this.labelVersion.Text = "Version";
-            // 
-            // labelProductName
-            // 
-            this.labelProductName.AutoSize = true;
-            this.labelProductName.Location = new System.Drawing.Point(287, 55);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(92, 17);
-            this.labelProductName.TabIndex = 0;
-            this.labelProductName.Text = "Product Name";
             // 
             // notifyIconTray
             // 
@@ -481,6 +447,52 @@
             // timerAutoMouse
             // 
             this.timerAutoMouse.Tick += new System.EventHandler(this.timerAutoMouse_Tick);
+            // 
+            // labelCredit
+            // 
+            this.labelCredit.Location = new System.Drawing.Point(208, 159);
+            this.labelCredit.Name = "labelCredit";
+            this.labelCredit.Size = new System.Drawing.Size(312, 132);
+            this.labelCredit.TabIndex = 32;
+            this.labelCredit.Text = "Icons made by Freepik from Flaticon.\r\nhttps://www.flaticon.com/authors/freepik\r\n\r" +
+    "\nThis app is made possible by auto_mouse_mover project of ebellocchia.\r\nhttps://" +
+    "github.com/ebellocchia/auto_mouse_mover";
+            // 
+            // labelCompanyName
+            // 
+            this.labelCompanyName.AutoSize = true;
+            this.labelCompanyName.Location = new System.Drawing.Point(208, 121);
+            this.labelCompanyName.Name = "labelCompanyName";
+            this.labelCompanyName.Size = new System.Drawing.Size(63, 17);
+            this.labelCompanyName.TabIndex = 31;
+            this.labelCompanyName.Text = "Company";
+            // 
+            // labelCopyright
+            // 
+            this.labelCopyright.AutoSize = true;
+            this.labelCopyright.Location = new System.Drawing.Point(208, 92);
+            this.labelCopyright.Name = "labelCopyright";
+            this.labelCopyright.Size = new System.Drawing.Size(65, 17);
+            this.labelCopyright.TabIndex = 30;
+            this.labelCopyright.Text = "Copyright";
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.Location = new System.Drawing.Point(208, 65);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(51, 17);
+            this.labelVersion.TabIndex = 29;
+            this.labelVersion.Text = "Version";
+            // 
+            // labelProductName
+            // 
+            this.labelProductName.AutoSize = true;
+            this.labelProductName.Location = new System.Drawing.Point(208, 38);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(92, 17);
+            this.labelProductName.TabIndex = 28;
+            this.labelProductName.Text = "Product Name";
             // 
             // Main
             // 
@@ -551,9 +563,10 @@
         private ComboBox comboBoxLeftClickTray;
         private GroupBox groupBoxSettings;
         private CheckBox checkBoxRunAtStartup;
-        private Label labelProductName;
-        private Label labelVersion;
-        private Label labelCopyright;
+        private Label labelCredit;
         private Label labelCompanyName;
+        private Label labelCopyright;
+        private Label labelVersion;
+        private Label labelProductName;
     }
 }
