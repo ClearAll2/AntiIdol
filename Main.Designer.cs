@@ -348,9 +348,8 @@
             this.labelIntructTrayIcon.Name = "labelIntructTrayIcon";
             this.labelIntructTrayIcon.Size = new System.Drawing.Size(359, 101);
             this.labelIntructTrayIcon.TabIndex = 7;
-            this.labelIntructTrayIcon.Text = "Tray icon indicates what services Anti Idol are runnings.\r\n\r\nYou can also set act" +
-    "ions when clicking on tray icon for fast switching state.";
-            this.labelIntructTrayIcon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelIntructTrayIcon.Text = "Tray icon can indicate services that Anti Idol are runnings.\r\n\r\nYou can also set " +
+    "actions when clicking on tray icon.";
             // 
             // comboBoxRightClickTray
             // 
