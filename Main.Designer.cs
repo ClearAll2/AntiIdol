@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tabControlMain = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageMain = new System.Windows.Forms.TabPage();
             this.groupBoxAutoKey = new System.Windows.Forms.GroupBox();
             this.comboBoxKey2Press = new System.Windows.Forms.ComboBox();
             this.numericUpDownIntervalAK = new System.Windows.Forms.NumericUpDown();
@@ -46,8 +46,9 @@
             this.labelPixelMove = new System.Windows.Forms.Label();
             this.labelIntructAM = new System.Windows.Forms.Label();
             this.checkBoxAutoMouse = new System.Windows.Forms.CheckBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageSetting = new System.Windows.Forms.TabPage();
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
+            this.checkBoxRunAtStartup = new System.Windows.Forms.CheckBox();
             this.groupBoxTrayOption = new System.Windows.Forms.GroupBox();
             this.labelIntructTrayIcon = new System.Windows.Forms.Label();
             this.comboBoxRightClickTray = new System.Windows.Forms.ComboBox();
@@ -57,26 +58,32 @@
             this.labelMidClickTrayIcon = new System.Windows.Forms.Label();
             this.labelLeftClickTray = new System.Windows.Forms.Label();
             this.checkBoxTrayIcon = new System.Windows.Forms.CheckBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.labelCompanyName = new System.Windows.Forms.Label();
+            this.labelCopyright = new System.Windows.Forms.Label();
+            this.labelVersion = new System.Windows.Forms.Label();
+            this.labelProductName = new System.Windows.Forms.Label();
             this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.timerAutoKey = new System.Windows.Forms.Timer(this.components);
             this.timerAutoMouse = new System.Windows.Forms.Timer(this.components);
             this.tabControlMain.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPageMain.SuspendLayout();
             this.groupBoxAutoKey.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervalAK)).BeginInit();
             this.groupBoxAutoMouse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervalAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPixelNo)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabPageSetting.SuspendLayout();
+            this.groupBoxSettings.SuspendLayout();
             this.groupBoxTrayOption.SuspendLayout();
+            this.tabPageAbout.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
             // 
-            this.tabControlMain.Controls.Add(this.tabPage1);
-            this.tabControlMain.Controls.Add(this.tabPage2);
-            this.tabControlMain.Controls.Add(this.tabPage3);
+            this.tabControlMain.Controls.Add(this.tabPageMain);
+            this.tabControlMain.Controls.Add(this.tabPageSetting);
+            this.tabControlMain.Controls.Add(this.tabPageAbout);
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMain.Location = new System.Drawing.Point(0, 0);
             this.tabControlMain.Name = "tabControlMain";
@@ -84,17 +91,17 @@
             this.tabControlMain.Size = new System.Drawing.Size(737, 358);
             this.tabControlMain.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPageMain
             // 
-            this.tabPage1.Controls.Add(this.groupBoxAutoKey);
-            this.tabPage1.Controls.Add(this.groupBoxAutoMouse);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(729, 328);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Anti Idol";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageMain.Controls.Add(this.groupBoxAutoKey);
+            this.tabPageMain.Controls.Add(this.groupBoxAutoMouse);
+            this.tabPageMain.Location = new System.Drawing.Point(4, 26);
+            this.tabPageMain.Name = "tabPageMain";
+            this.tabPageMain.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMain.Size = new System.Drawing.Size(729, 328);
+            this.tabPageMain.TabIndex = 0;
+            this.tabPageMain.Text = "Anti Idol";
+            this.tabPageMain.UseVisualStyleBackColor = true;
             // 
             // groupBoxAutoKey
             // 
@@ -116,9 +123,9 @@
             // 
             this.comboBoxKey2Press.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKey2Press.FormattingEnabled = true;
-            this.comboBoxKey2Press.Location = new System.Drawing.Point(149, 231);
+            this.comboBoxKey2Press.Location = new System.Drawing.Point(181, 231);
             this.comboBoxKey2Press.Name = "comboBoxKey2Press";
-            this.comboBoxKey2Press.Size = new System.Drawing.Size(181, 25);
+            this.comboBoxKey2Press.Size = new System.Drawing.Size(149, 25);
             this.comboBoxKey2Press.TabIndex = 8;
             // 
             // numericUpDownIntervalAK
@@ -285,26 +292,37 @@
             this.checkBoxAutoMouse.UseVisualStyleBackColor = true;
             this.checkBoxAutoMouse.CheckedChanged += new System.EventHandler(this.checkBoxAutoMouse_CheckedChanged);
             // 
-            // tabPage2
+            // tabPageSetting
             // 
-            this.tabPage2.Controls.Add(this.groupBoxSettings);
-            this.tabPage2.Controls.Add(this.groupBoxTrayOption);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(729, 330);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Settings";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageSetting.Controls.Add(this.groupBoxSettings);
+            this.tabPageSetting.Controls.Add(this.groupBoxTrayOption);
+            this.tabPageSetting.Location = new System.Drawing.Point(4, 24);
+            this.tabPageSetting.Name = "tabPageSetting";
+            this.tabPageSetting.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSetting.Size = new System.Drawing.Size(729, 330);
+            this.tabPageSetting.TabIndex = 1;
+            this.tabPageSetting.Text = "Settings";
+            this.tabPageSetting.UseVisualStyleBackColor = true;
             // 
             // groupBoxSettings
             // 
+            this.groupBoxSettings.Controls.Add(this.checkBoxRunAtStartup);
             this.groupBoxSettings.Location = new System.Drawing.Point(438, 6);
             this.groupBoxSettings.Name = "groupBoxSettings";
             this.groupBoxSettings.Size = new System.Drawing.Size(285, 314);
             this.groupBoxSettings.TabIndex = 1;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings";
+            // 
+            // checkBoxRunAtStartup
+            // 
+            this.checkBoxRunAtStartup.AutoSize = true;
+            this.checkBoxRunAtStartup.Location = new System.Drawing.Point(27, 36);
+            this.checkBoxRunAtStartup.Name = "checkBoxRunAtStartup";
+            this.checkBoxRunAtStartup.Size = new System.Drawing.Size(166, 21);
+            this.checkBoxRunAtStartup.TabIndex = 1;
+            this.checkBoxRunAtStartup.Text = "Run at Windows startup";
+            this.checkBoxRunAtStartup.UseVisualStyleBackColor = true;
             // 
             // groupBoxTrayOption
             // 
@@ -399,15 +417,55 @@
             this.checkBoxTrayIcon.UseVisualStyleBackColor = true;
             this.checkBoxTrayIcon.CheckedChanged += new System.EventHandler(this.checkBoxTrayIcon_CheckedChanged);
             // 
-            // tabPage3
+            // tabPageAbout
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(729, 330);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Help";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageAbout.Controls.Add(this.labelCompanyName);
+            this.tabPageAbout.Controls.Add(this.labelCopyright);
+            this.tabPageAbout.Controls.Add(this.labelVersion);
+            this.tabPageAbout.Controls.Add(this.labelProductName);
+            this.tabPageAbout.Location = new System.Drawing.Point(4, 24);
+            this.tabPageAbout.Name = "tabPageAbout";
+            this.tabPageAbout.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAbout.Size = new System.Drawing.Size(729, 330);
+            this.tabPageAbout.TabIndex = 2;
+            this.tabPageAbout.Text = "About";
+            this.tabPageAbout.UseVisualStyleBackColor = true;
+            // 
+            // labelCompanyName
+            // 
+            this.labelCompanyName.AutoSize = true;
+            this.labelCompanyName.Location = new System.Drawing.Point(287, 138);
+            this.labelCompanyName.Name = "labelCompanyName";
+            this.labelCompanyName.Size = new System.Drawing.Size(63, 17);
+            this.labelCompanyName.TabIndex = 3;
+            this.labelCompanyName.Text = "Company";
+            // 
+            // labelCopyright
+            // 
+            this.labelCopyright.AutoSize = true;
+            this.labelCopyright.Location = new System.Drawing.Point(287, 109);
+            this.labelCopyright.Name = "labelCopyright";
+            this.labelCopyright.Size = new System.Drawing.Size(65, 17);
+            this.labelCopyright.TabIndex = 2;
+            this.labelCopyright.Text = "Copyright";
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.Location = new System.Drawing.Point(287, 82);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(51, 17);
+            this.labelVersion.TabIndex = 1;
+            this.labelVersion.Text = "Version";
+            // 
+            // labelProductName
+            // 
+            this.labelProductName.AutoSize = true;
+            this.labelProductName.Location = new System.Drawing.Point(287, 55);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(92, 17);
+            this.labelProductName.TabIndex = 0;
+            this.labelProductName.Text = "Product Name";
             // 
             // notifyIconTray
             // 
@@ -428,7 +486,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(737, 358);
             this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -440,7 +498,7 @@
             this.Text = "Anti Idol";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.tabControlMain.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabPageMain.ResumeLayout(false);
             this.groupBoxAutoKey.ResumeLayout(false);
             this.groupBoxAutoKey.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervalAK)).EndInit();
@@ -448,9 +506,13 @@
             this.groupBoxAutoMouse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervalAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPixelNo)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.tabPageSetting.ResumeLayout(false);
+            this.groupBoxSettings.ResumeLayout(false);
+            this.groupBoxSettings.PerformLayout();
             this.groupBoxTrayOption.ResumeLayout(false);
             this.groupBoxTrayOption.PerformLayout();
+            this.tabPageAbout.ResumeLayout(false);
+            this.tabPageAbout.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -458,9 +520,9 @@
         #endregion
 
         private TabControl tabControlMain;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
+        private TabPage tabPageMain;
+        private TabPage tabPageSetting;
+        private TabPage tabPageAbout;
         private GroupBox groupBoxAutoKey;
         private GroupBox groupBoxAutoMouse;
         private NumericUpDown numericUpDownIntervalAM;
@@ -488,5 +550,10 @@
         private ComboBox comboBoxMidClickTray;
         private ComboBox comboBoxLeftClickTray;
         private GroupBox groupBoxSettings;
+        private CheckBox checkBoxRunAtStartup;
+        private Label labelProductName;
+        private Label labelVersion;
+        private Label labelCopyright;
+        private Label labelCompanyName;
     }
 }

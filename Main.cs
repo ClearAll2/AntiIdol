@@ -17,7 +17,6 @@ namespace AntiIdol
     public partial class Main : Form
     {
         private int sign = 1;
-        private bool exit = false;
 
         private enum TrayAction : int
         {
@@ -33,6 +32,11 @@ namespace AntiIdol
             comboBoxLeftClickTray.DataSource = Enum.GetValues(typeof(TrayAction));
             comboBoxMidClickTray.DataSource = Enum.GetValues(typeof(TrayAction));
             comboBoxRightClickTray.DataSource = Enum.GetValues(typeof(TrayAction));
+
+            labelProductName.Text = Application.ProductName;
+            labelVersion.Text = String.Format("Version {0}", Application.ProductVersion);
+            labelCopyright.Text = "Copyright © 2016 - 2022";
+            labelCompanyName.Text = Application.CompanyName;
 
             using (RegistryKey r = Registry.CurrentUser.OpenSubKey("SOFTWARE\\ClearAll\\XShort\\AMI", true))
             {
@@ -67,6 +71,14 @@ namespace AntiIdol
                 }
                 else
                     Registry.CurrentUser.CreateSubKey("SOFTWARE\\ClearAll\\XShort\\AMI");
+            }
+            using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            {
+                if (registryKey.GetValue("AntiIdol") != null)
+                {
+                    if (registryKey.GetValue("AntiIdol").ToString() == Application.ExecutablePath)
+                        checkBoxRunAtStartup.Checked = true;
+                }
             }
         }
 
@@ -232,15 +244,29 @@ namespace AntiIdol
                 r.SetValue("AMITrayRA", comboBoxRightClickTray.SelectedIndex);
                 r.SetValue("AMIKey", comboBoxKey2Press.SelectedValue.ToString());
             }
-            DialogResult dialogResult = MessageBox.Show("Do you want to hide this window to tray icon?", "Hide?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
             {
-                e.Cancel = true;
-                this.Hide();
+                if (checkBoxRunAtStartup.Checked)
+                {
+                    registryKey.SetValue("AntiIdol", Application.ExecutablePath);
+                }
+                else
+                {
+                    registryKey.DeleteValue("AntiIdol", false);
+                }
             }
-            else if (dialogResult == DialogResult.Cancel)
+            if (checkBoxAutoKey.Checked || checkBoxAutoMouse.Checked)
             {
-                e.Cancel = true;
+                DialogResult dialogResult = MessageBox.Show("Do you want to hide this window to tray icon?", "Hide?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                    this.Hide();
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 

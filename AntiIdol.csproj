@@ -7,12 +7,15 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <SignAssembly>False</SignAssembly>
-    <Company>$(Company)</Company>
-    <Authors>$(Authors)</Authors>
+    <Company>Built by Duc Nguyen</Company>
+    <Authors>Built by Duc Nguyen</Authors>
     <Title>Anti Idol</Title>
     <Copyright>Built by Duc Nguyen</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <ApplicationIcon>Resources\all_ready.ico</ApplicationIcon>
+    <Product>Anti Idol</Product>
+    <PackageProjectUrl>https://github.com/ClearAll2/AntiIdol</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ClearAll2/AntiIdol</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
